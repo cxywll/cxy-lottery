@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import shiyan from './views/shiyan.vue'
+import Chead from './views/shiyan.vue'
 
 Vue.use(Router)
 
@@ -10,8 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'shiyan',
-      component: shiyan
+      name: 'Chead',
+      component: Chead
     },
   ]
 })

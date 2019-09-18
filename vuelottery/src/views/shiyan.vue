@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="icon iconfont">&#xe629;</span>
+    <div class="head"></div>
   </div>
 </template>
 
@@ -11,7 +11,9 @@ export default {
 </script>
 
 <style scoped>
-    div>span{
-        font-size:1rem;
+    .head{
+      width: 10rem;
+      height: 2rem;
+      background: #ccc;
     }
 </style>
