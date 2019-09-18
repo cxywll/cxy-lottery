@@ -6,8 +6,6 @@
 
 <style>
 *{margin: 0;padding: 0;text-decoration: none;list-style: none;}
-<<<<<<< HEAD
-=======
 body,html{height: 100%;}
 #app{
   height: 100%;
@@ -24,5 +22,4 @@ body,html{height: 100%;}
     zoom: 1;
 }
 
->>>>>>> f04314b469e3a24dedc52f558bdd678e3e075e3d
 </style>

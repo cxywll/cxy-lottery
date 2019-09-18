@@ -8,6 +8,7 @@ import 'lib-flexible/flexible.js'
 Vue.config.productionTip = false
 
 new Vue({
+  icon,
   router,
   store,
   render: h => h(App)
