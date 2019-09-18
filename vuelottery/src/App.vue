@@ -4,14 +4,11 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 *{margin: 0;padding: 0;text-decoration: none;list-style: none;}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
-  color: #2c3e50;
+body,html{height: 100%;}
+#app{
+  height: 100%;
 }
  .clearfix::after,
 .clearfix::before {

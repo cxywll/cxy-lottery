@@ -10,12 +10,12 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/shiyan',
       name: 'shiyan',
       component: shiyan
     },
     {
-      path: '/home',
+      path: '/',
       name: 'home',
       component: Home
     },
