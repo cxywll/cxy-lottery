@@ -15,11 +15,14 @@ export default new Router({
       path: '/',
       name: 'Cfoot',
       component: Cfoot
+<<<<<<< HEAD
     },
     {
       path: '/shiyan',
       name: 'shiyan',
       component: shiyan
+=======
+>>>>>>> e384c4d787334ac309a08d23be89c4a05a597277
     },
     {
       path: '/',
