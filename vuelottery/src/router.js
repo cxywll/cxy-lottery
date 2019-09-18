@@ -11,12 +11,18 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+<<<<<<< HEAD
       path: '/',
       name: 'Cfoot',
       component: Cfoot
+=======
+      path: '/shiyan',
+      name: 'shiyan',
+      component: shiyan
+>>>>>>> f04314b469e3a24dedc52f558bdd678e3e075e3d
     },
     {
-      path: '/home',
+      path: '/',
       name: 'home',
       component: Home
     },
