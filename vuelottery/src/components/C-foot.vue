@@ -8,19 +8,21 @@
 
 <script>
 export default {
+    created(){
 
+    }
 }
 </script>
 
 <style scoped>
     .foot{
-        width: 750px;
-        height: 110px;
+        width: 640px;
+        height: 100px;
         background-color: red;
         position: fixed;
         bottom: 0;
         left: 0;
-        line-height: 110px;
+        line-height: 100px;
     }
     .right{
         width: 75%;
@@ -28,7 +30,7 @@ export default {
         background-color: #212121;
     }
     .right p{
-        font-size: 28px;
+        font-size: 16px;
         color: #fff;
         text-align: center;
     }
