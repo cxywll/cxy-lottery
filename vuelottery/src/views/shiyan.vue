@@ -1,5 +1,7 @@
 <template>
-  <div>232523</div>
+  <div>
+    <span class="icon iconfont">&#xe629;</span>
+  </div>
 </template>
 
 <script>
@@ -9,7 +11,7 @@ export default {
 </script>
 
 <style scoped>
-    div{
-        font-size: 0.3rem;
+    div>span{
+        font-size:1rem;
     }
 </style>
