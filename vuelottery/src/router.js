@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import shiyan from './views/shiyan.vue'
 import Home from './views/z-home.vue'
-import Cfoot from './components/C-foot.vue'
+import Ctrend from './views/C-trend.vue'
 
 Vue.use(Router)
 
@@ -12,13 +11,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Cfoot',
-      component: Cfoot
-    },
-    {
-      path: '/',
       name: 'home',
       component: Home
     },
+    // 走势图
+    {
+      path:'/trend',
+      name:'Ctrend',
+      component:Ctrend
+    }
   ]
 })
