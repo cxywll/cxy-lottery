@@ -6,7 +6,7 @@
         <img :src="user_img" alt />
         <input type="file" @change="file($event)" class="input_user_img" />
       </div>
-      <div class="white--text">用户名</div>
+      <div class="white--text">{{user_name}}</div>
       <div class="container">
         <div class="container_box">
           <span>{{SimulationNum}}</span>模拟金
@@ -37,8 +37,9 @@ export default {
       SimulationNum: 200, //模拟金
       integralNum: 200, //积分
       time: "", //时间
+      user_name:'小赵',//用户名
       user_img:
-        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540139703196&di=e4cd33a4c426a158199be6b7b9ece9ac&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F01%2F31%2F87%2F96573b585a7c9c4.jpg",
+        "",
       list: [
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
@@ -96,7 +97,15 @@ export default {
     };
   },
   created() {
+    if(localStorage.user_img){
+      this.user_img = localStorage.user_img;
+    }else{  
+        this.user_img = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540139703196&di=e4cd33a4c426a158199be6b7b9ece9ac&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F01%2F31%2F87%2F96573b585a7c9c4.jpg'
+    } 
     this.times();//时间
+    this.$http.post('users/up',{name:'111',pass:'...'},{emulateJSON:true}).then(data=>{
+      console.log(data)
+    })
   },
   methods: {
     //时间在改变
@@ -114,11 +123,14 @@ export default {
       var f = event.target.files[0];
       var d = new FormData();
       d.append('img',f)
-      console.log(d);
+      this.$http.post('files/file',d,{emulateJSON:true}).then((data)=>{
+        this.user_img = 'http://localhost:8000/img/'+ data.data
+        localStorage.user_img = this.user_img
+      })
     },
     //跳转到下注
     lotteryHall() {
-      this.$router.push({ path: "/lotteryHall" });
+      this.$router.push({ path: "/" });
     }
   }
 };
