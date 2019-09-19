@@ -8,13 +8,13 @@
 		<div class="j-content">
 			<div class="j-content-header"></div>
 			<div class="j-content-content" style=",min-height: 145px;max-height: 580px;overflow: scroll;" id="one">
-				<div v-for="(i,$index) in 8" style="height: 145px;border-bottom: 1px solid #eee;" class="j-boxs">
+				<div v-for="(i,$index) in arr" style="height: 145px;border-bottom: 1px solid #eee;" class="j-boxs">
 					<div class="j-boxsleft" @click="btn1(i,$index)">
 						<i class="iconfont icon-lajitong "></i>
 					</div>
 					<div class="j-boxsright">
-						<div class="j-boxsright-top">{{i}}</div>
-						<div class="j-boxsright-bottom">和值&nbsp;1注&nbsp;2模拟金</div>
+						<div class="j-boxsright-top">{{i.name}}</div>
+						<div class="j-boxsright-bottom">和值&nbsp;{{i.zhu}}&nbsp;{{i.mo}}</div>
 					</div>
 				</div>
 			</div>
@@ -30,9 +30,9 @@
 				<wcj class="j-btn" @click="type=true" style="color: white;font-size: 20px;">投注</wcj>
 			</div>
 		</div>
-		<div class="j-one" v-if="type">
-			<!--<wcj></wcj>-->
-		</div>
+		<!--<div class="j-one" v-if="type">-->
+		<!--<wcj></wcj>-->
+		<!--</div>-->
 	</div>
 
 </template>
@@ -41,21 +41,54 @@
 	import alert from '@/components/alert.vue'
 	export default {
 		data() {
-
 			return {
-				type: false
+				type: false,
+				arr: [{
+						name: 'ccc',
+						zhu: '1注',
+						mo: '2模拟金'
+					},
+					{
+						name: 'aaa',
+						zhu: '8注',
+						mo: '5模拟金'
+					},
+					{
+						name: 'bbb',
+						zhu: '5注',
+						mo: '8模拟金'
+					},
+					{
+						name: 'fff',
+						zhu: '7注',
+						mo: '4模拟金'
+					},
+					{
+						name: 'www',
+						zhu: '9注',
+						mo: '1模拟金'
+					},
+					{
+						name: 'qqq',
+						zhu: '20注',
+						mo: '14模拟金'
+					},
+					{
+						name: 'ggg',
+						zhu: '19注',
+						mo: '10模拟金'
+					}
+				]
 			}
 		},
 		components: {
 			wcj: alert
 		},
 		methods: {
-			btn1(a) {
-				console.log(a)
-				var jBox = document.querySelectorAll('.j-boxs')
-				var one = document.getElementById("one");
-				one.removeChild(one.childNodes[0]);
-			}
+			btn1(a, b) {
+				this.arr.splice(b, 1)
+			},
+
 		}
 	}
 </script>
@@ -94,6 +127,7 @@
 	
 	.j-xuan {
 		color: #599bdc;
+		text-decoration: none;
 	}
 	
 	.j-content {
