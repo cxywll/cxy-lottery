@@ -6,7 +6,7 @@
         </div>
         <div class="plain">
             <p>奖励说明</p>
-            <table border="1" cellspacing="0" border-color="red">
+            <table border="1">
                 <tr>
                     <td width="100" style="background:#eee">玩法</td>
                     <td width="130" style="background:#eee">中奖条件</td>
@@ -102,6 +102,7 @@ export default {
         margin: 5px 5px 5px 5px;
     }
     table{
+        width: 100%;
         border:1px solid #e6e6e6;
     }
     table tr td{
