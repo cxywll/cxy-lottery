@@ -1,21 +1,24 @@
 <template>
   <div class="loginBox">
-      <div class="title">
-          <h3>登录</h3>
+      <!-- 头像 -->
+      <div class="image">
+          <div class="headPortrait">
+            <img src="" alt="">
+          </div>
       </div>
       <div class="main">
           <input type="text" placeholder="请输入账号">
           <input type="text" placeholder="请输入密码">
       </div>
       <div class="loginBut">
-        <button>登录</button>
+        <button>注册</button>
       </div>
       <div class="registerLogin">
           <div class="buttwo">
-            <span>登录</span>
-            <router-link to='/register'>
-                <span>注册</span>
+            <router-link to="/login">
+                <span>登录</span>
             </router-link>
+            <span>注册</span>
           </div>
       </div>
   </div>
@@ -34,13 +37,23 @@ export default {
         height:17.75rem;
         background-color: #00422c;
     }
-    .title{
+    .image{
         width: 100%;
         height:300px;
+        text-align: center;
         line-height: 300px;
-        padding: 0 15%;
+        position: relative;
     }
-    .title h3{
+    .headPortrait{
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background-color: #ccc;
+        position: absolute;
+        top: 35%;
+        left: 42%;
+    }
+    .image h3{
         color: #e7fde7;
         font-size: 40px;
         font-weight: normal;
