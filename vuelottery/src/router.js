@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import shiyan from './views/shiyan.vue'
 import Home from './views/z-home.vue'
 import Cfoot from './components/C-foot.vue'
-
+import point from './views/y-point.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -20,5 +20,10 @@ export default new Router({
       name: 'home',
       component: Home
     },
+    {
+      path: '/point',
+      name: 'point',
+      component: point
+    }
   ]
 })
