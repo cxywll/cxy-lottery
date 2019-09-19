@@ -19,7 +19,7 @@ export default {
 
 <style scoped>
     .foot{
-        width: 640px;
+        width: 100%;
         height: 100px;
         background-color: red;
         position: fixed;
