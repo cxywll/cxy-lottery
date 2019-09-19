@@ -12,6 +12,7 @@ Vue.use(VueAxios,Axios)
 Vue.config.productionTip = false
 
 new Vue({
+  icon,
   router,
   store,
   render: h => h(App)
