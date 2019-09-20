@@ -12,7 +12,7 @@
         </div>
         <div class="container_box">
           <span>{{integralNum}}</span>积分
-          <router-link class="white--text" to="/shop">兑换</router-link>
+          <router-link class="white--text" to="/point">兑换</router-link>
         </div>
       </div>
     </header>
@@ -170,6 +170,9 @@ header {
   flex: 1;
   color: #ffab00;
   font-size: 26px;
+}
+.container_box a{
+  text-decoration: none;
 }
 .main_flex {
   display: flex;
