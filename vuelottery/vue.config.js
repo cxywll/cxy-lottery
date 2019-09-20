@@ -10,6 +10,11 @@ module.exports = {
             target: 'http://localhost:8000',
             ws: true,
             changeOrigin: false
+          },
+          '/data':{
+            target: 'http://localhost:8000',
+            ws: true,
+            changeOrigin: false
           }
         }
     }

@@ -2,9 +2,8 @@
   <div class="home">
     <header>
       <h2 class="head_text_h2">{{time}}</h2>
-      <div class="user_img">
+      <div class="user_img" @click="go_to_login">
         <img :src="user_img" alt />
-        <input type="file" @change="file($event)" class="input_user_img" />
       </div>
       <div class="white--text">{{user_name}}</div>
       <div class="container">
@@ -103,8 +102,8 @@ export default {
         this.user_img = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540139703196&di=e4cd33a4c426a158199be6b7b9ece9ac&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F01%2F31%2F87%2F96573b585a7c9c4.jpg'
     } 
     this.times();//时间
-    this.$http.post('users/up',{name:'111',pass:'...'},{emulateJSON:true}).then(data=>{
-      console.log(data)
+    this.$http.get('data/data').then(data=>{
+      console.log(data.data)
     })
   },
   methods: {
@@ -118,15 +117,8 @@ export default {
         this.time = "早上好！朋友";
       }
     },
-    //头像上传
-    file(event) {
-      var f = event.target.files[0];
-      var d = new FormData();
-      d.append('img',f)
-      this.$http.post('files/file',d,{emulateJSON:true}).then((data)=>{
-        this.user_img = 'http://localhost:8000/img/'+ data.data
-        localStorage.user_img = this.user_img
-      })
+    go_to_login(){
+      this.$router.push({path:'/login'})
     },
     //跳转到下注
     lotteryHall() {
@@ -141,13 +133,7 @@ export default {
   height: 100%;
   background-color: #077552;
 }
-.input_user_img {
-  opacity: 0;
-  position: relative;
-  top: -105px;
-  width: 100px;
-  height: 100px;
-}
+
 header {
   text-align: center;
 
