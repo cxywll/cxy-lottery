@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/z-home.vue'
 import Ctrend from './views/C-trend.vue'
 import touzhu from './views/j-touzhu.vue'
-import alert from './components/alert.vue'
+// import alert from './components/alert.vue'
 import point from './views/y-point.vue'
 import lotteryRule from './views/f-lotteryRule.vue'
 import Login from './views/C-login.vue'
@@ -44,16 +44,18 @@ export default new Router({
       name: 'touzhu',
       component: touzhu
     },
-    {
-      path: '/alert',
-      name: 'alert',
-      component: alert
-    },
+    // {
+    //   path: '/alert',
+    //   name: 'alert',
+    //   component: alert
+    // },
+    // 兑换
     {
       path: '/point',
       name: 'point',
       component: point
     },
+    // 玩法规则
     {
       path:'/lotteryRule',
       name:'Rule',
