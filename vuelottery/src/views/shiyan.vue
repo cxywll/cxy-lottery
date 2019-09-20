@@ -1,5 +1,7 @@
 <template>
-  <div>232523</div>
+  <div>
+    <div class="head"></div>
+  </div>
 </template>
 
 <script>
@@ -9,7 +11,9 @@ export default {
 </script>
 
 <style scoped>
-    div{
-        font-size: 0.3rem;
+    .head{
+      width: 10rem;
+      height: 2rem;
+      background: #ccc;
     }
 </style>

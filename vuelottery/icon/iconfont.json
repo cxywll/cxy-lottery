@@ -1,0 +1,58 @@
+{
+  "id": "1420334",
+  "name": "cxy-lottery",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "356445",
+      "name": "加号",
+      "font_class": "jiahao",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "2700123",
+      "name": "问号",
+      "font_class": "wenhao",
+      "unicode": "e725",
+      "unicode_decimal": 59173
+    },
+    {
+      "icon_id": "4659463",
+      "name": "快三",
+      "font_class": "kuaisan",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "4934419",
+      "name": "用户头像",
+      "font_class": "yonghutouxiang",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "5064090",
+      "name": "垃圾桶",
+      "font_class": "lajitong",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "9512503",
+      "name": "下箭头",
+      "font_class": "arrowBottom",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "9603282",
+      "name": "快三",
+      "font_class": "kuaisan1",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    }
+  ]
+}
