@@ -18,8 +18,9 @@
     </header>
     <main>
       <div class="main_flex">
-        <div v-for="(i,index) in list" :key="index" class="main_fx">
+        <div v-for="(i,index) in list" :key="index" class="main_fx" @click="addClass">
           <div class="main_img" @click="lotteryHall"></div>
+          <!-- animated -->
           <span>{{i.name}}</span>
         </div>
       </div>
@@ -37,8 +38,8 @@ export default {
       integralNum: 200, //积分
       time: "", //时间
       user_name:'小赵',//用户名
-      user_img:
-        "",
+      user_img:"",
+      animate:false,
       list: [
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
@@ -46,51 +47,51 @@ export default {
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "安徽快3"
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "江苏快3"
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "江西快3"
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "内蒙古快3"
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "吉林快3"
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "湖北快3"
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "贵州快3"
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "广西快3"
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "甘肃快3"
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "福建快3"
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "北京快3"
         },
         {
           icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
-          name: "河北快3"
+          name: "上海快3"
         }
       ]
     };
@@ -103,7 +104,7 @@ export default {
     } 
     this.times();//时间
     this.$http.get('data/data').then(data=>{
-      console.log(data.data)
+      // console.log(data.data)
     })
   },
   methods: {
@@ -123,6 +124,15 @@ export default {
     //跳转到下注
     lotteryHall() {
       this.$router.push({ path: "/" });
+    },
+    addClass($event){
+      // if(event.target.className.indexOf('pulse')!==-1){
+      //   event.target.classList.remove('pulse')
+      // }else{
+      //   event.target.classList.add('pulse')
+      // }
+      console.log(event.target)
+      event.target.classList.add('aaa','active')
     }
   }
 };
@@ -184,15 +194,24 @@ header {
   max-width: 25%;
   flex-basis: 25%;
 }
+@keyframes identifier {
+  0%{transform:scale(1)}
+  50%{transform: scale(1.3)}
+  100%{transform:scale(1)}
+}
 .main_img {
   background-image: url(http://haoxg.xyz/lottery/img/k31.f388457f.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   min-width: 0;
   border-radius: 50%;
-  margin: 15px 30px 15px 30px;
+  margin: 20px 30px 15px 40px;
+}
+.aaa{
+  animation-name: identifier;
+  animation-duration: 2s;
 }
 .main_fx span {
   display: block;

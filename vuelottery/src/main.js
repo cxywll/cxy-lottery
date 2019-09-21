@@ -8,8 +8,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import Axios from 'axios'
 import VueAxios from 'vue-axios'
+import Animate from 'animate.css'
 
 Vue.use(ElementUI);
+Vue.use(Animate);
 Vue.use(VueAxios,Axios)
 
 Vue.config.productionTip = false
