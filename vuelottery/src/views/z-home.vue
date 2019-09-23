@@ -131,7 +131,7 @@ export default {
       // }else{
       //   event.target.classList.add('pulse')
       // }
-      console.log(event.target)
+      // console.log(event.target)
       event.target.classList.add('aaa','active')
     }
   }
