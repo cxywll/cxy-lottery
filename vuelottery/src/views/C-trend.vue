@@ -14,21 +14,41 @@
         <th>6</th>
       </thead>
       <tr class="tr" v-for="(item,index) in list" :key="index">
-        <td v-for="(items,index) in item" :key="index">
-          {{items}}
-          <!--  v-show="spanShow" -->
-          <!-- 给span一个单独的样式，如果数据里出现了相同的号码，就添加上红色的样式 -->
-          <!-- <span :class="{active:false}">
-            {{items}} -->
-            <!-- <i>{{items}}</i> -->
-          <!-- </span> -->
+        <!-- 开奖期号 -->
+        <td>
+          {{item.issue}}
         </td>
-        <td><span>1</span><i>1</i></td>
-        <td><span>2</span><i>2</i></td>
-        <td><span>3</span><i>1</i></td>
-        <td><span>4</span><i>2</i></td>
-        <td><span>5</span><i>1</i></td>
-        <td><span>6</span><i>2</i></td>
+        <!-- 开奖号码 -->
+        <td>
+          {{item.for_no.split(',').join('')}}
+        </td>
+        <!-- 大小 -->
+        <td>
+          {{item.sun_value>9?'大':'小'}}
+        </td>
+        <!-- 单双 -->
+        <td>
+          {{item.sun_value%2==1?'单':'双'}}
+        </td>
+        <!-- 开奖号走势图 -->
+        <td>
+          <span :style="{backgroundColor:item.for_no.indexOf(1)==-1?'':'red'}">1<i :style="{display:item.for_no.indexOf(1)==0&&item.two_number.indexOf(1)==0&&item.two_number.split('').length>=2?'block':'none'}">{{item.two_number.split('').length}}</i></span>
+        </td>
+        <td>
+          <span :style="{backgroundColor:item.for_no.indexOf(2)==-1?'':'red'}">2<i :style="{display:item.for_no.indexOf(2)==0&&item.two_number.indexOf(2)==0&&item.two_number.split('').length>=2?'block':'none'}">{{item.two_number.split('').length}}</i></span>
+        </td>
+        <td>
+          <span :style="{backgroundColor:item.for_no.indexOf(3)==-1?'':'red'}">3<i :style="{display:item.for_no.indexOf(3)==0&&item.two_number.indexOf(3)==0&&item.two_number.split('').length>=2?'block':'none'}">{{item.two_number.split('').length}}</i></span>
+        </td>
+        <td>
+          <span :style="{backgroundColor:item.for_no.indexOf(4)==-1?'':'red'}">4<i :style="{display:item.for_no.indexOf(4)==0&&item.two_number.indexOf(4)==0&&item.two_number.split('').length>=2?'block':'none'}">{{item.two_number.split('').length}}</i></span>
+        </td>
+        <td>
+          <span :style="{backgroundColor:item.for_no.indexOf(5)==-1?'':'red'}">5<i :style="{display:item.for_no.indexOf(5)==0&&item.two_number.indexOf(5)==0&&item.two_number.split('').length>=2?'block':'none'}">{{item.two_number.split('').length}}</i></span>
+        </td>
+        <td>
+          <span :style="{backgroundColor:item.for_no.indexOf(6)==-1?'':'red'}">6<i :style="{display:item.for_no.indexOf(6)==0&&item.two_number.indexOf(6)==0&&item.two_number.split('').length>=2?'block':'none'}">{{item.two_number.split('').length}}</i></span>
+        </td>
       </tr>
     </table>
     <Cfoot></Cfoot>
@@ -41,43 +61,7 @@ export default {
   data(){
     return{
       spanShow:false,
-      list:[
-        {
-          qici:'1期',
-          kjh:'123',
-          daxiao:'大',
-          dansh:'单',
-        },
-        {
-          qici:'1期',
-          kjh:'123',
-          daxiao:'大',
-          dansh:'单',
-        },{
-          qici:'1期',
-          kjh:'123',
-          daxiao:'大',
-          dansh:'单',
-        },
-        {
-          qici:'1期',
-          kjh:'123',
-          daxiao:'大',
-          dansh:'单',
-        },{
-          qici:'1期',
-          kjh:'123',
-          daxiao:'大',
-          dansh:'单',
-        },
-        {
-          qici:'1期',
-          kjh:'123',
-          daxiao:'大',
-          dansh:'单',
-        },
-      ],
-      data:[]
+      list:[]
     }
   },
   components:{
@@ -86,17 +70,16 @@ export default {
   created(){
     for(var i=0;i<this.list.length;i++){
       for(var key in this.list[i]){
-          // console.log(key,this.list[2][key])
           if(this.list[i][key] == null){
             this.spanShow = true;
           }
       }
     }
     this.$http.get('/data/data').then(data=>{
-      this.data = data.data
-      console.log(this.data[i].sun_value)
+      this.list = data.data;
+      console.log(this.list)
     })
-    // if(this.list)
+    
   }
 }
 </script>
@@ -109,8 +92,8 @@ export default {
 .content{
   width: 100%;
   border-collapse:collapse;
-  /* border-right: 1px #00422c solid; */
   margin-top: 3.4rem;
+  margin-bottom: 1.55rem;
 }
 .trHead{
   width: 100%;
@@ -139,17 +122,16 @@ export default {
 .tr td{
   font-size: 23px;
   position: relative;
+  color: #fff;
 }
 .tr td span{
-  width: 80%;
-  height: 80%;
+  width: .7rem;
+  height: .7rem;
   display: block;
-  position: absolute;
-  left: 10%;
-  top: 10%;
+  margin: 0 auto;
+  position: relative;
   text-align: center;
   line-height: .7rem;
-  background-color: red;
   border-radius: 50%;
 }
 .active{
@@ -168,8 +150,8 @@ export default {
   color: #fff;
 }
 .tr td i{
-  width:  .4rem;
-  height: .4rem;
+  width:  .3rem;
+  height: .3rem;
   background-color: blue;
   display: block;
   border-radius: 50%;
@@ -177,8 +159,8 @@ export default {
   position: absolute;
   right: 0;
   top: 0;
-  font-size: 5px;
+  font-size: .2rem;
   text-align: center;
-  line-height: .4rem;
+  line-height: .3rem;
 }
 </style>
