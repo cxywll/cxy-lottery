@@ -19,7 +19,6 @@
 				</div>
 			</div>
 			<div class="j-content-bottom"></div>
-
 		</div>
 		<div class="j-footer">
 			<div class="j-footer-left">

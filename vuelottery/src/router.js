@@ -1,14 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Stype from './views/S-type.vue'
-import Cfoot from './components/C-foot.vue'
 import Home from './views/z-home.vue'
+<<<<<<< HEAD
 import Ctrend from './views/C-trend.vue'
 import Login from './views/C-login.vue'
+=======
+
+import Ctrend from './views/C-trend.vue'
+
+import Cfoot from './components/C-foot.vue'
+>>>>>>> cc0a59a9370fd4f4918b1e669d6c2a81d8600f07
 import touzhu from './views/j-touzhu.vue'
 // import alert from './components/alert.vue'
 import point from './views/y-point.vue'
 import lotteryRule from './views/f-lotteryRule.vue'
+<<<<<<< HEAD
+=======
+import Login from './views/C-login.vue'
+>>>>>>> cc0a59a9370fd4f4918b1e669d6c2a81d8600f07
 
 Vue.use(Router)
 

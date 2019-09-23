@@ -9,6 +9,7 @@
         </div>
       </div>
       <div class="main">
+        <input type="text" placeholder="请输入用户名" v-model="log_up.name" />
         <input type="text" placeholder="请输入账号" v-model="log_up.user" />
         <input type="text" placeholder="请输入密码" v-model="log_up.pass" />
       </div>
@@ -48,6 +49,7 @@ export default {
   data() {
     return {
       log_in: {
+        name: "",
         user: "",
         pass: ""
       },
@@ -59,9 +61,7 @@ export default {
       }
     };
   },
-  created() {
-
-  },
+  created() {},
   methods: {
     //头像上传
     file(event) {
@@ -88,21 +88,24 @@ export default {
           }
         });
     },
-     //登录
+    //登录
     log_in_btn() {
       this.log_in.user_imgs = this.user_img;
-      this.$http.post('users/in',this.log_in,{emulateJSON:true}).then(data=>{
-        if(data.data.type== 0){
+      this.$http
+        .post("users/in", this.log_in, { emulateJSON: true })
+        .then(data => {
+          if (data.data.type == 0) {
             alert(data.data.data);
-        }else if(data.data.type== 1){
+          } else if (data.data.type == 1) {
             alert(data.data.data);
-        }else{
-            alert('登录成功');
-        this.$router.push({path:'/'})
-
-        }
-      })
-    },
+          } else {
+            alert("登录成功");
+            localStorage.name = data.data.data.name;
+            localStorage.user_img = data.data.data.user_imgs;
+            this.$router.push({path:'/'})
+          }
+        });
+    }
   }
 };
 </script>
@@ -189,7 +192,6 @@ export default {
 }
 .main {
   width: 100%;
-  height: 160px;
   padding: 0 10%;
   margin-bottom: 25px;
 }
@@ -210,6 +212,7 @@ export default {
   padding: 0 0.2rem;
   outline: none;
   font-size: 25px;
+  color: #fff;
 }
 .loginBut {
   width: 100%;
