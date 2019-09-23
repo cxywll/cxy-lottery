@@ -90,10 +90,10 @@ export default {
             this.spanShow = true;
           }
       }
-      this.$http.get('/data').then(data=>{
-        // console.log(data)
-      })
     }
+    this.$http.get('/data/data').then(data=>{
+      console.log(data)
+    })
     // if(this.list)
   }
 }

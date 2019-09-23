@@ -2,12 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Stype from './views/S-type.vue'
 import Home from './views/z-home.vue'
-import Cfoot from './components/C-foot.vue'  
 
 import Ctrend from './views/C-trend.vue'
 
 import Cfoot from './components/C-foot.vue'
-import Ctrend from './views/C-trend.vue'
 import touzhu from './views/j-touzhu.vue'
 // import alert from './components/alert.vue'
 import point from './views/y-point.vue'
