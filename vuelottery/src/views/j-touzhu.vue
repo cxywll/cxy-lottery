@@ -2,7 +2,7 @@
 	<div class="j-box">
 		<div class="j-header">
 			<div class="j-header-left">
-				<router-link to="" class="j-xuan">+继续选号</router-link>
+				<router-link to="/Stype" class="j-xuan">+继续选号</router-link>
 			</div>
 		</div>
 		<div class="j-content">

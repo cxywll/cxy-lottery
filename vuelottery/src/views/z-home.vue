@@ -19,9 +19,11 @@
     <main>
       <div class="main_flex">
         <div v-for="(i,index) in list" :key="index" class="main_fx" @click="addClass">
-          <div class="main_img" @click="lotteryHall"></div>
-          <!-- animated -->
-          <span>{{i.name}}</span>
+          <router-link to='/Stype'>
+            <div class="main_img" @click="lotteryHall"></div>
+            <!-- animated -->
+            <span>{{i.name}}</span>
+          </router-link>
         </div>
       </div>
     </main>

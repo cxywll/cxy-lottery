@@ -285,7 +285,9 @@
         </div>
         <div class="s_zhu">
             <p>共{{zhu}}注 <a>{{money}}模拟金</a></p>
-            <span>确定</span>
+            <router-link to='/touzhu'>
+                <span>确定</span>
+            </router-link>
         </div>
     </div>
 </template>
