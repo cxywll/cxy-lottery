@@ -72,58 +72,58 @@
 	}
 </script>
 
-    <style scoped>
-    	.active{
-    		border-bottom: 3px solid red;
-    	}
-    	.shop-banner{
-    		position: relative;
-    	}
-		.shop-banner img{ 
-			width: 100%;
-		}
-		#broadcast {
-	    position: absolute;
-	    bottom: 0;
-	    left: 0;
-	    right: 0;
-	    background-color: rgba(0,0,0,.5);
-	    font-size: 10px;
-	    color: red;
-	    padding: 2px 5px;
-	    overflow: hidden;
-		}
-		.v-tabs__wrapper{
-			width: 100%;
-			height: 88px;
-			background: write;
-		}
-		.v-tabs__item{
-			width: 50%;
-			height:88px;
-			background: rgba(0,0,0,.07);
-			float: left;
-			box-sizing: border-box;
-		}
-		
-		.v-tabs__div a{
-			font-size: 30px;
-			line-height:88px;
-			text-align: center;
+<style scoped>
+.active{
+	border-bottom: 3px solid red;
+}
+.shop-banner{
+	position: relative;
+}
+.shop-banner img{ 
+	width: 100%;
+}
+#broadcast {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0,0,0,.5);
+font-size: 10px;
+color: red;
+padding: 2px 5px;
+overflow: hidden;
+}
+.v-tabs__wrapper{
+	width: 100%;
+	height: 88px;
+	background: write;
+}
+.v-tabs__item{
+	width: 50%;
+	height:88px;
+	background: rgba(0,0,0,.07);
+	float: left;
+	box-sizing: border-box;
+}
 
-		}
-		.iph{
-			width: 50%;
-			height: 300px;
-			float:left;
-			text-align: center;
+.v-tabs__div a{
+	font-size: 30px;
+	line-height:88px;
+	text-align: center;
 
-		}
-		.iph img{
-			display: inline-block;
-			text-align: center;
-		    max-height: 200px;
-		    max-width: 200px;
-		    vertical-align: middle;
-		}
-	</style>
+}
+.iph{
+	width: 50%;
+	height: 300px;
+	float:left;
+	text-align: center;
+
+}
+.iph img{
+	display: inline-block;
+	text-align: center;
+	max-height: 200px;
+	max-width: 200px;
+	vertical-align: middle;
+}
+</style>
