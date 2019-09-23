@@ -113,7 +113,7 @@ export default {
       } else if (timer.getHours() >= 12) {
         this.time = "下午好！朋友";
       } else {
-        this.time = "早上好！朋友";
+        this.time = "上午好！朋友";
       }
     },
     go_to_login(){
