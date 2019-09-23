@@ -48,7 +48,7 @@ router.post('/in', function (req, res, next) {
     var text = eval(fs.readFileSync('./login.txt', 'utf8'))
     for (var i = 0; i < text.length; i++) {
       if (text[i].user == json.user && text[i].pass == json.pass) {
-          user_status = false
+        user_status = false
       }
     }
     if (user_status) {
@@ -57,9 +57,15 @@ router.post('/in', function (req, res, next) {
         data: '账号密码不匹配'
       })
     } else {
+      var arrList = null;
+      for (var i = 0; i < text.length; i++) {
+        if (text[i].user == json.user && text[i].pass == json.pass) {
+             arrList = text[i]
+        }
+      }
       res.send({
         type: 2,
-        data: text
+        data: arrList
       })
     }
   }
