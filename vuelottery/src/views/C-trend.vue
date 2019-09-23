@@ -14,7 +14,7 @@
         <th>6</th>
       </thead>
       <tr class="tr" v-for="(item,index) in list" :key="index">
-        <td v-for="(items) in item" :key="items">
+        <td v-for="(items,index) in item" :key="index">
           {{items}}
           <!--  v-show="spanShow" -->
           <!-- 给span一个单独的样式，如果数据里出现了相同的号码，就添加上红色的样式 -->
@@ -23,12 +23,12 @@
             <!-- <i>{{items}}</i> -->
           <!-- </span> -->
         </td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
+        <td><span>1</span><i>1</i></td>
+        <td><span>2</span><i>2</i></td>
+        <td><span>3</span><i>1</i></td>
+        <td><span>4</span><i>2</i></td>
+        <td><span>5</span><i>1</i></td>
+        <td><span>6</span><i>2</i></td>
       </tr>
     </table>
     <Cfoot></Cfoot>
@@ -90,6 +90,9 @@ export default {
             this.spanShow = true;
           }
       }
+      this.$http.get('/data').then(data=>{
+        // console.log(data)
+      })
     }
     // if(this.list)
   }
@@ -97,72 +100,83 @@ export default {
 </script>
 
 <style scoped>
-    .trendbox{
-      width: 100%;
-    }
-    .content{
-      width: 100%;
-      border-collapse:collapse;
-      /* border-right: 1px #00422c solid; */
-      margin-top: 3.4rem;
-    }
-    .trHead{
-      width: 100%;
-      height: 45px;
-    }
-    .tr{
-      width: 100%;
-      height: 55px;
-    }
-    .tr:nth-child(2n)>td{
-      background-color: #08533c;
-    }
-    .trHead th,.tr td{
-      width:9%;
-      padding:0.1rem 0;
-      font-size: 25px;
-      background-color: #0b5f45;
-      border-bottom:1px solid #00422c;
-      border-right:1px solid #00422c;
-      color: rgb(72,184,146);
-      text-align: center;
-    }
-    .trHead th:nth-child(2),.tr td:nth-child(2){
-      width: 15%;
-    }
-    .tr td{
-      font-size: 23px;
-      position: relative;
-    }
-    /* .tr td span */
-    .active{
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: red;
-      display: inline-block;
-      text-align: center;
-      line-height: 35px;
-      position: absolute;
-      left:6px;
-      right: 0;
-      bottom: 0;
-      top: 10px;
-      color: #fff;
-    }
-    /* .tr td span i{
-      width: 20px;
-      height: 20px;
-      background-color: blue;
-      display: inline-block;
-      border-radius: 50%;
-      font-style: normal;
-      position: absolute;
-      font-size: 5px;
-      text-align: center;
-      line-height: 20px;
-      top: -5px;
-      right: -5px;
-      color: #fff;
-    } */
+
+.trendbox{
+  width: 100%;
+}
+.content{
+  width: 100%;
+  border-collapse:collapse;
+  /* border-right: 1px #00422c solid; */
+  margin-top: 3.4rem;
+}
+.trHead{
+  width: 100%;
+  height: 45px;
+}
+.tr{
+  width: 100%;
+  height: 55px;
+}
+.tr:nth-child(2n)>td{
+  background-color: #08533c;
+}
+.trHead th,.tr td{
+  width: 9vw;
+  height: 9vw;
+  font-size: 25px;
+  background-color: #0b5f45;
+  border-bottom:1px solid #00422c;
+  border-right:1px solid #00422c;
+  color: rgb(72,184,146);
+  text-align: center;
+}
+.trHead th:nth-child(2),.tr td:nth-child(2){
+  width: 15%;
+}
+.tr td{
+  font-size: 23px;
+  position: relative;
+}
+.tr td span{
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  line-height: .9rem;
+  background-color: red;
+  border-radius: 50%;
+}
+.active{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: red;
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
+  position: absolute;
+  left:6px;
+  right: 0;
+  bottom: 0;
+  top: 10px;
+  color: #fff;
+}
+.tr td i{
+  width:  .4rem;
+  height: .4rem;
+  background-color: blue;
+  display: block;
+  border-radius: 50%;
+  font-style: normal;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 5px;
+  text-align: center;
+  line-height: .4rem;
+}
 </style>
