@@ -24,7 +24,9 @@
                                 <div v-for="(i,index) in arr" :key="index" v-show="stype" @click="change(i,index)">{{i}}</div> 
                             </div>
                         </div>
-                        <span><i class="iconfont icon-wenhao"></i></span>
+                        <router-link to='/lotteryRule'>
+                            <span><i class="iconfont icon-wenhao"></i></span>
+                        </router-link>
                     </div>
                     <div class="s_h" v-if="m==0">
                         <div class="s_type_content">
