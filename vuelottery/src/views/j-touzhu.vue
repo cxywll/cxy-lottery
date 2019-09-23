@@ -7,8 +7,8 @@
 		</div>
 		<div class="j-content">
 			<div class="j-content-header"></div>
-			<div class="j-content-content" style=",min-height: 145px;max-height: 580px;overflow: scroll;" id="one">
-				<div v-for="(i,$index) in arr" style="height: 145px;border-bottom: 1px solid #eee;" class="j-boxs">
+			<div class="j-content-content" style=",min-height: 100px;max-height: 580px;overflow: scroll;" id="one">
+				<div v-for="(i,$index) in arr" style="height: 90px;border-bottom: 1px solid #eee;" class="j-boxs">
 					<div class="j-boxsleft" @click="btn1(i,$index)">
 						<i class="iconfont icon-lajitong "></i>
 					</div>
@@ -78,7 +78,8 @@
 						zhu: '19注',
 						mo: '10模拟金'
 					}
-				]
+				],
+
 			}
 		},
 		components: {
@@ -86,7 +87,7 @@
 		},
 		methods: {
 			btn1(a, b) {
-				this.arr.splice(b, 1)
+				this.arr.splice(b,1)
 			},
 
 		}
@@ -108,7 +109,6 @@
 	.j-header {
 		width: 100%;
 		height: 55px;
-		/*background: lightblue;*/
 	}
 	
 	.j-header-left {
@@ -133,11 +133,10 @@
 	.j-content {
 		width: 100%;
 		height: 970px;
-		/*background:green;*/
 	}
 	
 	.j-content-header {
-		width: 610px;
+		width: 98%;
 		height: 25px;
 		background-image: url(../../img/images/1_03.png);
 		background-repeat: no-repeat;
@@ -147,15 +146,13 @@
 	}
 	
 	.j-content-content {
-		width: 580px;
-		/*height: 500px;*/
+		width: 92%;
 		background: white;
-		/*margin-top: 200px;*/
 		margin: 0 auto;
 	}
 	
 	.j-content-bottom {
-		width: 580px;
+		width: 92%;
 		height: 22px;
 		background-image: url(../../img/images/1_07.png);
 		background-position: 0 0;
@@ -163,41 +160,41 @@
 		margin: 0 auto;
 	}
 	
-	.j-boxs {}
+	.j-boxs {
+		height: 130px;
+	}
 	
 	.j-boxsleft {
 		width: 35px;
 		height: 35px;
-		margin-top: 65px;
+		margin-top: 50px;
 		margin-left: 35px;
-		/*background: lightcoral;*/
 		float: left;
 	}
 	
 	.j-boxsleft .icon-lajitong {
-		font-size: 35px;
+		font-size: 40px;
 		color: #bdbdbd;
 	}
 	
-	.j-boxsright {
+	.j-boxsright { 
 		width: 195px;
-		height: 65px;
+		height: 50px;
 		float: left;
 		margin-left: 130px;
-		margin-top: 50px;
-		/*background: lightblue;*/
+		margin-top: 30px;
 	}
 	
 	.j-boxsright-top {
 		color: #cb5a5a;
-		font-size: 25px;
+		font-size: 30px;
 	}
 	
 	.j-boxsright-bottom {
 		color: #b1b1b1;
-		font-size: 18px;
+		font-size: 20px;
 	}
-	
+
 	.j-footer {
 		width: 100%;
 		height: 95px;
@@ -223,7 +220,7 @@
 		color: #ba900e;
 	}
 	
-	.j-footer-right {
+	.j-footer-right {         
 		width: 25%;
 		height: 95px;
 		float: left;
@@ -252,6 +249,7 @@
 	}
 	
 	.el-message-box__message p span {
+		margin-top: 20px;
 		font-size: 21px;
 	}
 	
