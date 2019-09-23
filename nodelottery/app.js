@@ -9,8 +9,6 @@ const https = require("https");
 const fs = require("fs");
 const cheerio = require("cheerio");
 
-
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var filesRouter = require('./routes/file');
@@ -31,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/files', filesRouter);
-app.use('/data',datasRouter)
+app.use('/data', datasRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -62,12 +60,17 @@ setInterval(() => {
       var file = []
       $("#kjinfos1 tr").each(function (index, element) {
         const el = $(element);
-
         if (el.find('td').eq(1).text() == "-") return;
         file.push({
-          期号: el.find('td').eq(0).text(),
-          时间: el.find('td').eq(1).text(),
-          奖号: el.find('td').eq(2).text(),
+          issue: el.find('td').eq(0).text(),  //期号
+          time: el.find('td').eq(1).text(),   //时间
+          for_no: el.find('td').eq(2).text(), // 奖号
+          sun_value: el.find('td').eq(3).text(), //和值
+          three_number: el.find('td').eq(4).text(), //三同号
+          two_number: el.find('td').eq(5).text(), //二同号
+          three_different: el.find('td').eq(6).text(), //三不同
+          two_different: el.find('td').eq(7).text(), //二不同
+          three_numbers: el.find('td').eq(8).text(), //三连号
         })
       });
       fs.writeFile("data.txt", JSON.stringify(file), function (err) {
@@ -77,8 +80,6 @@ setInterval(() => {
     })
   });
 }, 120000)
-
-
 
 
 
