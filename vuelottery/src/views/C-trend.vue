@@ -76,7 +76,8 @@ export default {
           daxiao:'大',
           dansh:'单',
         },
-      ]
+      ],
+      data:[]
     }
   },
   components:{
@@ -92,7 +93,8 @@ export default {
       }
     }
     this.$http.get('/data/data').then(data=>{
-      console.log(data)
+      this.data = data.data
+      console.log(this.data[i].sun_value)
     })
     // if(this.list)
   }
@@ -139,14 +141,14 @@ export default {
   position: relative;
 }
 .tr td span{
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   display: block;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 10%;
+  top: 10%;
   text-align: center;
-  line-height: .9rem;
+  line-height: .7rem;
   background-color: red;
   border-radius: 50%;
 }

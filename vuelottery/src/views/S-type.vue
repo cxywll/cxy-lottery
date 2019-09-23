@@ -7,7 +7,7 @@
             </div>
             <div class="s_infor">
                 <p class="s_t">距{{qi}}期截止</p>
-                <p class="s_n">00:00</p>
+                <p class="s_n">0{{minutes}}:{{seconds}}</p>
             </div>
         </div>
         <div class="s_c">
@@ -252,14 +252,32 @@ export default {
             arr:['和值','三同号','二同号','三不同','二不同'],
             monment:'和值',
             m: 0,
+            minutes:9,
+            seconds:59,
         }
+    },
+    created(){
+        var timer = setInterval(()=>{
+            if(this.seconds == 0){
+                this.seconds = 59;
+                this.minutes --
+            }else{
+                this.seconds --;
+                if(this.seconds<10){
+                    this.seconds = '0'+this.seconds
+                }
+            }
+            if(this.seconds==0 && this.minutes==0){
+                clearInterval(timer)
+            }
+        },1000);
     },
     methods: {
         change(a,b){
             this. stype = false;
             this.monment = a;
             this.m = b;
-        }
+        },
     }
 }
 </script>
