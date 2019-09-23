@@ -8,7 +8,7 @@
 		<div class="j-content">
 			<div class="j-content-header"></div>
 			<div class="j-content-content" style=",min-height: 145px;max-height: 580px;overflow: scroll;" id="one">
-				<div v-for="(i,$index) in arr" style="height: 145px;border-bottom: 1px solid #eee;" class="j-boxs">
+				<div v-for="(i,$index) in arr" :key="$index" style="height: 145px;border-bottom: 1px solid #eee;" class="j-boxs">
 					<div class="j-boxsleft" @click="btn1(i,$index)">
 						<i class="iconfont icon-lajitong "></i>
 					</div>
