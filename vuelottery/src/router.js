@@ -3,6 +3,10 @@ import Router from 'vue-router'
 import Stype from './views/S-type.vue'
 import Home from './views/z-home.vue'
 import Cfoot from './components/C-foot.vue'  
+
+import Ctrend from './views/C-trend.vue'
+
+import Cfoot from './components/C-foot.vue'
 import Ctrend from './views/C-trend.vue'
 import touzhu from './views/j-touzhu.vue'
 // import alert from './components/alert.vue'
@@ -44,11 +48,6 @@ export default new Router({
       name: 'touzhu',
       component: touzhu
     },
-    // {
-    //   path: '/alert',
-    //   name: 'alert',
-    //   component: alert
-    // },
     // 兑换
     {
       path: '/point',
