@@ -7,13 +7,8 @@
 		</div>
 		<div class="j-content">
 			<div class="j-content-header"></div>
-<<<<<<< HEAD
-			<div class="j-content-content" style=",min-height: 100px;max-height: 580px;overflow: scroll;" id="one">
-				<div v-for="(i,$index) in arr" style="height: 90px;border-bottom: 1px solid #eee;" class="j-boxs">
-=======
 			<div class="j-content-content" style=",min-height: 145px;max-height: 580px;overflow: scroll;" id="one">
 				<div v-for="(i,$index) in arr" :key="$index" style="height: 145px;border-bottom: 1px solid #eee;" class="j-boxs">
->>>>>>> a92fd3427c86d7e3ed9688d2a23f94ddfefa1a08
 					<div class="j-boxsleft" @click="btn1(i,$index)">
 						<i class="iconfont icon-lajitong "></i>
 					</div>
