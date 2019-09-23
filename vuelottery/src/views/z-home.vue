@@ -104,12 +104,6 @@ export default {
         this.user_img = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540139703196&di=e4cd33a4c426a158199be6b7b9ece9ac&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F01%2F31%2F87%2F96573b585a7c9c4.jpg'
     }
     this.times();//时间
-<<<<<<< HEAD
-=======
-    this.$http.get('data/data').then(data=>{
-      // console.log(data.data)
-    })
->>>>>>> d3ae967a4899e5cdff580a72b50d6b36daff3ad5
   },
   methods: {
     //时间在改变
