@@ -20,7 +20,9 @@
       <div class="main_flex">
         <div v-for="(i,index) in list" :key="index" class="main_fx" @click="addClass">
           <router-link to='/Stype'>
-            <div class="main_img" @click="lotteryHall"></div>
+            <div class="main_img" @click="lotteryHall">
+              <img :src="i.icon" alt="">
+            </div>
             <!-- animated -->
             <span>{{i.name}}</span>
           </router-link>
@@ -44,7 +46,7 @@ export default {
       animate:false,
       list: [
         {
-          icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
+          icon: "http://haoxg.xyz/lottery/img/happyk3.ea0489f1.png",
           name: "河北快3"
         },
         {
@@ -199,7 +201,6 @@ header {
   100%{transform:scale(1)}
 }
 .main_img {
-  background-image: url(http://haoxg.xyz/lottery/img/k31.f388457f.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 80px;
@@ -207,6 +208,11 @@ header {
   min-width: 0;
   border-radius: 50%;
   margin: 20px 30px 15px 40px;
+}
+.main_img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 .aaa{
   animation-name: identifier;
@@ -219,5 +225,6 @@ header {
 }
 .active {
   background-image: url(http://haoxg.xyz/lottery/img/happyk3.ea0489f1.png);
+  background-size: 100% 100%;
 }
 </style>
