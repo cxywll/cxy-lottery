@@ -324,6 +324,7 @@ export default {
               }
           }
         }
+        
         this.$http.get('/data/data').then(data=>{
           this.list = data.data;
           console.log(this.list)
