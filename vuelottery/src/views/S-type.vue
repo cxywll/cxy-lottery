@@ -317,32 +317,32 @@ export default {
         },
     },
     created(){
-    for(var i=0;i<this.list.length;i++){
-      for(var key in this.list[i]){
-          if(this.list[i][key] == null){
-            this.spanShow = true;
+        for(var i=0;i<this.list.length;i++){
+          for(var key in this.list[i]){
+              if(this.list[i][key] == null){
+                this.spanShow = true;
+              }
           }
-      }
-    }
-    this.$http.get('/data/data').then(data=>{
-      this.list = data.data;
-      console.log(this.list)
-    })
-    // 倒计时
-    var timer = setInterval(()=>{
-        if(this.seconds == 0){
-            this.seconds = 59;
-            this.minutes --
-        }else{
-            this.seconds --;
-            if(this.seconds<10){
-                this.seconds = '0'+this.seconds
+        }
+        this.$http.get('/data/data').then(data=>{
+          this.list = data.data;
+          console.log(this.list)
+        })
+        // 倒计时
+        var timer = setInterval(()=>{
+            if(this.seconds == 0){
+                this.seconds = 59;
+                this.minutes --
+            }else{
+                this.seconds --;
+                if(this.seconds<10){
+                    this.seconds = '0'+this.seconds
+                }
             }
-        }
-        if(this.seconds==0 && this.minutes==0){
-            clearInterval(timer)
-        }
-    },1000);
+            if(this.seconds==0 && this.minutes==0){
+                clearInterval(timer)
+            }
+        },1000);
     
   }
 }
