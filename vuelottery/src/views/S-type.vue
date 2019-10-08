@@ -7,7 +7,7 @@
             </div>
             <div class="s_infor">
                 <p class="s_t">距{{qi}}期截止</p>
-                <p class="s_n">00:00</p>
+                <p class="s_n">0{{minutes}}:{{seconds}}</p>
             </div>
         </div>
         <div class="s_c">
@@ -285,7 +285,9 @@
         </div>
         <div class="s_zhu">
             <p>共{{zhu}}注 <a>{{money}}模拟金</a></p>
-            <span>确定</span>
+            <router-link to='/touzhu'>
+                <span>确定</span>
+            </router-link>
         </div>
     </div>
 </template>
@@ -302,6 +304,8 @@ export default {
             arr:['和值','三同号','二同号','三不同','二不同'],
             monment:'和值',
             m: 0,
+            minutes:9,
+            seconds:59,
             list:[],
         }
     },
@@ -310,7 +314,7 @@ export default {
             this. stype = false;
             this.monment = a;
             this.m = b;
-        }
+        },
     },
     created(){
     for(var i=0;i<this.list.length;i++){
@@ -323,6 +327,21 @@ export default {
     this.$http.get('/data/data').then(data=>{
       this.list = data.data;
     })
+    // 倒计时
+    var timer = setInterval(()=>{
+        if(this.seconds == 0){
+            this.seconds = 59;
+            this.minutes --
+        }else{
+            this.seconds --;
+            if(this.seconds<10){
+                this.seconds = '0'+this.seconds
+            }
+        }
+        if(this.seconds==0 && this.minutes==0){
+            clearInterval(timer)
+        }
+    },1000);
     
   }
 }
@@ -520,6 +539,10 @@ export default {
     color: #fff;
     float: right;
     margin-right: .5rem;
+}
+.s_types{
+    box-shadow: 3px 3px 5px #a3a3a3;
+    border-radius: 7px;
 }
 .s_type .s_types>div{
     line-height: 1.2rem;

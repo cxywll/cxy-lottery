@@ -5,7 +5,6 @@ import Home from './views/z-home.vue'
 import Ctrend from './views/C-trend.vue'
 import Login from './views/C-login.vue'
 import touzhu from './views/j-touzhu.vue'
-// import alert from './components/alert.vue'
 import point from './views/y-point.vue'
 import lotteryRule from './views/f-lotteryRule.vue'
 

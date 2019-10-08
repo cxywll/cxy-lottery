@@ -121,6 +121,7 @@ export default {
 .tr td{
   font-size: 23px;
   position: relative;
+  color: #fff;
 }
 .tr td span{
   width: .7rem;

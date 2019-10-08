@@ -19,9 +19,13 @@
     <main>
       <div class="main_flex">
         <div v-for="(i,index) in list" :key="index" class="main_fx" @click="addClass">
-          <div class="main_img" @click="lotteryHall"></div>
-          <!-- animated -->
-          <span>{{i.name}}</span>
+          <router-link to='/Stype'>
+            <div class="main_img" @click="lotteryHall">
+              <img :src="i.icon" alt="">
+            </div>
+            <!-- animated -->
+            <span>{{i.name}}</span>
+          </router-link>
         </div>
       </div>
     </main>
@@ -42,7 +46,7 @@ export default {
       animate:false,
       list: [
         {
-          icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
+          icon: "http://haoxg.xyz/lottery/img/happyk3.ea0489f1.png",
           name: "河北快3"
         },
         {
@@ -100,7 +104,7 @@ export default {
     if(localStorage.user_img){
       this.user_img = localStorage.user_img;
       this.user_name =  localStorage.name;
-    }else{  
+    }else{
         this.user_img = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540139703196&di=e4cd33a4c426a158199be6b7b9ece9ac&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F01%2F31%2F87%2F96573b585a7c9c4.jpg'
     }
     this.times();//时间
@@ -197,7 +201,6 @@ header {
   100%{transform:scale(1)}
 }
 .main_img {
-  background-image: url(http://haoxg.xyz/lottery/img/k31.f388457f.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 80px;
@@ -205,6 +208,11 @@ header {
   min-width: 0;
   border-radius: 50%;
   margin: 20px 30px 15px 40px;
+}
+.main_img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 .aaa{
   animation-name: identifier;
@@ -217,5 +225,6 @@ header {
 }
 .active {
   background-image: url(http://haoxg.xyz/lottery/img/happyk3.ea0489f1.png);
+  background-size: 100% 100%;
 }
 </style>
