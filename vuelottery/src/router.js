@@ -7,6 +7,7 @@ import Login from './views/C-login.vue'
 import touzhu from './views/j-touzhu.vue'
 import point from './views/y-point.vue'
 import lotteryRule from './views/f-lotteryRule.vue'
+import Recharge from './views/c-recharge.vue'
 
 Vue.use(Router)
 
@@ -54,6 +55,12 @@ export default new Router({
       path:'/Stype',
       name: 'Stype',
       component: Stype
+    },
+    // 充值
+    {
+      path:'/recharge',
+      name: 'Recharge',
+      component: Recharge
     }
   ]
 })
