@@ -31,12 +31,7 @@
 //            done();
 //          }
 //        }
-        }).then(action => {
-//        this.$message({
-//          type: 'info',
-//          message: 'action: ' + action
-//        });
-        });
+        })
       }
     }
   }

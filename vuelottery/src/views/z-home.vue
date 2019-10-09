@@ -5,23 +5,27 @@
       <div class="user_img" @click="go_to_login">
         <img :src="user_img" alt />
       </div>
-      <div class="white--text">{{user_name}}</div>
+      <div class="white_text">{{user_name}}</div>
       <div class="container">
         <div class="container_box">
           <span>{{SimulationNum}}</span>模拟金
         </div>
         <div class="container_box">
           <span>{{integralNum}}</span>积分
-          <router-link class="white--text" to="/point">兑换</router-link>
+          <router-link class="white_text" to="/point">兑换</router-link>
         </div>
       </div>
     </header>
     <main>
       <div class="main_flex">
         <div v-for="(i,index) in list" :key="index" class="main_fx" @click="addClass">
-          <div class="main_img" @click="lotteryHall"></div>
-          <!-- animated -->
-          <span>{{i.name}}</span>
+          <router-link to='/Stype'>
+            <div class="main_img" @click="lotteryHall">
+              <img :src="i.icon" alt="">
+            </div>
+            <!-- animated -->
+            <span>{{i.name}}</span>
+          </router-link>
         </div>
       </div>
     </main>
@@ -29,7 +33,7 @@
 </template>
 
 <script>
-var timer = new Date(); //对象对象
+var timer = new Date(); //时间对象
 export default {
   name: "home",
   data() {
@@ -42,7 +46,7 @@ export default {
       animate:false,
       list: [
         {
-          icon: "http://haoxg.xyz/lottery/img/k31.f388457f.jpg",
+          icon: "http://haoxg.xyz/lottery/img/happyk3.ea0489f1.png",
           name: "河北快3"
         },
         {
@@ -99,13 +103,11 @@ export default {
   created() {
     if(localStorage.user_img){
       this.user_img = localStorage.user_img;
-    }else{  
+      this.user_name =  localStorage.name;
+    }else{
         this.user_img = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540139703196&di=e4cd33a4c426a158199be6b7b9ece9ac&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F01%2F31%2F87%2F96573b585a7c9c4.jpg'
-    } 
+    }
     this.times();//时间
-    this.$http.get('data/data').then(data=>{
-      // console.log(data.data)
-    })
   },
   methods: {
     //时间在改变
@@ -115,7 +117,7 @@ export default {
       } else if (timer.getHours() >= 12) {
         this.time = "下午好！朋友";
       } else {
-        this.time = "早上好！朋友";
+        this.time = "上午好！朋友";
       }
     },
     go_to_login(){
@@ -132,7 +134,7 @@ export default {
       //   event.target.classList.add('pulse')
       // }
       // console.log(event.target)
-      event.target.classList.add('aaa','active')
+      $event.target.classList.add('aaa','active')
     }
   }
 };
@@ -146,7 +148,7 @@ export default {
 
 header {
   text-align: center;
-
+  font-size: 24px;
   background-color: rgb(8, 83, 60);
   margin-bottom: 20px;
 }
@@ -167,7 +169,7 @@ header {
   height: 100%;
   border-radius: 50%;
 }
-.white--text {
+.white_text {
   color: #fff;
 }
 .container {
@@ -192,7 +194,6 @@ header {
 .main_fx {
   flex: 1;
   max-width: 25%;
-  flex-basis: 25%;
 }
 @keyframes identifier {
   0%{transform:scale(1)}
@@ -200,7 +201,6 @@ header {
   100%{transform:scale(1)}
 }
 .main_img {
-  background-image: url(http://haoxg.xyz/lottery/img/k31.f388457f.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 80px;
@@ -209,6 +209,11 @@ header {
   border-radius: 50%;
   margin: 20px 30px 15px 40px;
 }
+.main_img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
 .aaa{
   animation-name: identifier;
   animation-duration: 2s;
@@ -216,8 +221,10 @@ header {
 .main_fx span {
   display: block;
   color: #48b892;
+  font-size:24px; 
 }
 .active {
   background-image: url(http://haoxg.xyz/lottery/img/happyk3.ea0489f1.png);
+  background-size: 100% 100%;
 }
 </style>

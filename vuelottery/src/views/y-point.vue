@@ -120,6 +120,7 @@ overflow: hidden;
 	float: left;
 	box-sizing: border-box;
 }
+<<<<<<< HEAD
 
 .v-tabs__div a{
 	font-size: 30px;
@@ -134,16 +135,35 @@ overflow: hidden;
 	text-align: center;
 
 }
+=======
+
+.v-tabs__div a{
+	font-size: 30px;
+	line-height:88px;
+	text-align: center;
+
+}
+.iph{
+	width: 50%;
+	height: 300px;
+	float:left;
+	text-align: center;
+
+}
+>>>>>>> 6d060c8ae89ad737a68824ee8d469de054109f3f
 .iph img{
 	display: inline-block;
 	text-align: center;
 	max-height: 200px;
 	max-width: 200px;
 	vertical-align: middle;
+<<<<<<< HEAD
 	margin-left:-30px;
 }
 .iph p{
 	font-size: 15px;
 	color: black;
+=======
+>>>>>>> 6d060c8ae89ad737a68824ee8d469de054109f3f
 }
 </style>
