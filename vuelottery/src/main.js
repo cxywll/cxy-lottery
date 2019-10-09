@@ -13,7 +13,6 @@ import Animate from 'animate.css'
 Vue.use(ElementUI);
 Vue.use(Animate);
 Vue.use(VueAxios,Axios)
-Vue.use(router)
 
 Vue.config.productionTip = false
 
