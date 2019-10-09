@@ -10,6 +10,12 @@
     "server": "nodemon index.js --ignore client"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "animate": "^1.0.0",
+    "animate.css": "^3.7.2",
+    "axios": "^0.19.0",
+=======
+>>>>>>> 6d060c8ae89ad737a68824ee8d469de054109f3f
     "core-js": "^2.6.5",
     "lib-flexible": "^0.3.2",
     "vue": "^2.6.10",
