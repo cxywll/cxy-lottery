@@ -15,6 +15,11 @@ module.exports = {
             target: 'http://localhost:8000',
             ws: true,
             changeOrigin: false
+          },
+          '/index':{
+            target: 'http://localhost:8000',
+            ws: true,
+            changeOrigin: false
           }
         }
     }
