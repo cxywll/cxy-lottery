@@ -11,7 +11,7 @@
       <div class="main">
         <input type="text" placeholder="请输入用户名" v-model="log_up.name" />
         <input type="text" placeholder="请输入账号" v-model="log_up.user" />
-        <input type="text" placeholder="请输入密码" v-model="log_up.pass" />
+        <input type="password" placeholder="请输入密码" v-model="log_up.pass" />
       </div>
       <div class="loginBut">
         <button @click="log_up_btn">注册</button>
@@ -29,7 +29,7 @@
       </div>
       <div class="main">
         <input type="text" placeholder="请输入账号" v-model="log_in.user" />
-        <input type="text" placeholder="请输入密码" v-model="log_in.pass" />
+        <input type="password" placeholder="请输入密码" v-model="log_in.pass" />
       </div>
       <div class="loginBut">
         <button @click="log_in_btn">登录</button>
