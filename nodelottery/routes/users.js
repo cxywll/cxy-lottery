@@ -32,7 +32,6 @@ router.post('/up', function (req, res, next) {
         data: '账号已注册'
       })
     }
-
   }
 });
 //登录

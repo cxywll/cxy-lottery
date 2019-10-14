@@ -68,6 +68,11 @@
 				type:false,
 
 			}
+		},
+		created(){
+			this.$http.get('data/json').then((data)=>{
+				console.log(data.data[0],data.data[1])
+			})
 		}
 	}
 </script>
@@ -76,7 +81,7 @@
 .active{
 	border-bottom: 3px solid red;
 }
-.shop-banner{
+.shop-banner{   
 	position: relative;
 }
 .shop-banner img{ 
