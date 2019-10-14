@@ -100,15 +100,15 @@ export default {
     return {
       type: false,
       typealter: false,
-      conversion :[],//兑换
-      shop:[]  //购物
+      conversion: [], //兑换
+      shop: [] //购物
     };
   },
-  created(){
-    this.$http.get('data/json').then(data=>{
-      this.conversion =  data.data[0]
-      this.shop = data.data[1]
-    })
+  created() {
+    this.$http.get("data/json").then(data => {
+      this.conversion = data.data[0];
+      this.shop = data.data[1];
+    });
   },
   components: {
     wcjs: alert
@@ -150,34 +150,28 @@ export default {
   box-sizing: border-box;
 }
 
-.v-tabs__div a {
-  font-size: 30px;
-  line-height: 88px;
-  text-align: center;
+.v-tabs__div a{
+	font-size: 30px;
+	line-height:88px;
+	text-align: center;
 }
-.iph {
-  width: 50%;
-  height: 300px;
-  float: left;
-  text-align: center;
-}
+.iph{
+	width: 50%;
+	height: 300px;
+	float:left;
+	text-align: center;
 
-.v-tabs__div a {
-  font-size: 30px;
-  line-height: 88px;
-  text-align: center;
 }
-.iph {
-  width: 50%;
-  height: 300px;
-  float: left;
-  text-align: center;
+.iph img{
+	display: inline-block;
+	text-align: center;
+	max-height: 200px;
+	max-width: 200px;
+	vertical-align: middle;
+	margin-left:-30px;
 }
-.iph img {
-  display: inline-block;
-  text-align: center;
-  max-height: 200px;
-  max-width: 200px;
-  vertical-align: middle;
+.iph p{
+	font-size: 15px;
+	color: black;
 }
 </style>
