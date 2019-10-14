@@ -13,12 +13,11 @@
 					<a class="v-tabs__item v-tabs__item--active" style="position: static;" :class="[!type?'active':'']">购物区</a>
 				</div>
 		</div>
+		<!-- 兑换 -->
 		<div class="left" v-show='type'>
-			<div class="iph" v-for="(item,index) in conversion" :key="index">
+			<div class="iph dhimg" v-for="(item,index) in conversion" :key="index">
 				<wcjs class="j-btn" @click="typealter=true">
-					<div class="dhimg">
-						<img :src="item.img">
-					</div>
+					<img :src="item.img">
 					<p class="text-xs-center mb-0">{{item.name}}</p>
 					<p class="text-xs-center mb-0">积分：{{item.point}}</p>
 					<p class="text-xs-center mb-0"><small>市场参考价：{{item.price}}.00</small></p>
@@ -123,13 +122,16 @@ export default {
 	margin-left:-30px;
 }
 .dhimg{
-	width:100%;
-	height: 3rem;
-	/* padding-top: 0.8rem; */
+	width: 50%;
+	height: 300px;
+	float: left;
+}
+.dhimg:nth-of-type(2){
+	padding-top: 0.8rem;
 	box-sizing: border-box;
 }
-.dhimg img{
-	line-height: 3rem;
+.dhimg:nth-of-type(2) img{
+	margin-bottom: 0.3rem;
 }
 .iph p{
 	font-size: 15px;
