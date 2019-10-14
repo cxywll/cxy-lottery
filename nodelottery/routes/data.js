@@ -8,6 +8,10 @@ router.get('/data',function(req,res){
     var data = eval(fs.readFileSync('data.txt','utf8'))
     res.send(data)
 })
-
+router.get('/json',function(req,res){
+    var json = req.query;
+    var data = eval(fs.readFileSync('json.json','utf8'))
+    res.send(data)
+})
 
 module.exports = router;
