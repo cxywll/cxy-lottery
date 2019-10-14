@@ -28,7 +28,7 @@
 		<div class="right" v-show='!type'>
 			<div class="iph" v-for="(item,index) in shop" :key="index"> 
 				<wcjs class="j-btn" @click="typealter=true">
-					<div style="margin:20px;">
+					<div>
 						<img :src="item.img">
 					</div>
 					<p class="text-xs-center mb-0">{{item.name}}</p>
@@ -134,7 +134,8 @@ export default {
 	margin-bottom: 0.3rem;
 }
 .iph p{
-	font-size: 15px;
+	font-size: 0.3rem;
 	color: black;
+	line-height: .4rem;
 }
 </style>
